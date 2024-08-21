@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Aida Haro">
+        <title>Producto integrador. Prototipo de sistema Web</title>
+        <link rel="stylesheet" href="./sass/style.css">
+        
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+
+
+    </head>
+
+    <body class="slider">
+
+        <header id="header">
+
+            <section role="contentinfo"  id="normal-header"> <!-- Diferencía secciones -->
+                <a href="#" id="image-link">
+                    <img src="./resources/logo/Logo metálico.svg" alt="Reverse Logo" id="header-img"/>
+                </a>
+
+                <nav id="nav-bar" role="navigation">
+                    <ul>
+                        <li class="nav-link" id="menu-item"><a href="./index.html" class="menu-link"> Home </a></li>
+                        <li class="nav-link" id="menu-item"><a href="./nosotros.html" class="menu-link"> Nosotros </a></li>
+                        <li class="nav-link" id="menu-item"><a href="./reservas.html" class="menu-link"> Reservas </a></li>
+                        <li class="nav-link" id="menu-item"><a href="./catalogos.html" class="menu-link"> Catálogos </a></li>
+                        <li class="nav-link" id="menu-item"><a href="./noticias.html" class="menu-link"> Noticias </a><li>
+                        <li class="nav-link" id="menu-item"><a href="./preguntas.html" class="menu-link"> Preguntas </a><li></li>
+                        <li class="nav-link" id="menu-item"><a href="./login.html" target="_blank" class="menu-link"> Sesión </a><li></li>
+                    </ul>
+                </nav>
+            </section>
+
+
+
+            <div id="responsive-header">
+                <div id="responsive-logo-button">
+                    <a href="#" id="image-link"><img src="./resources/logo/logoNegroAzulSOLO.svg" alt="Reverse Logo" id="header-img-black"/></a>
+                    <button id="image-button-black"><img src="https://i.ibb.co/yfM3fdZ/dropdown-menu-black.png" alt="Dropdown Menu" id="dropdown-button-black" /></button>
+                </div>
+
+                <div id="responsive-nav-bar">
+                    <ul>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./index.html" class="responsive-menu-link"> Home </a></li>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./nosotros.html" class="responsive-menu-link"> Nosotros </a></li>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./reservas.html" class="responsive-menu-link"> Reservas </a></li>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./catalogos.html" class="responsive-menu-link"> Catálogos </a></li>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./noticias.html" class="responsive-menu-link"> Noticias </a><li>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./preguntas.html" class="responsive-menu-link"> Preguntas </a><li></li>
+                        <li class="nav-link" id="responsive-menu-item"><a href="./login.html" target="_blank" class="responsive-menu-link"> Sesión </a><li></li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Hero Image, text & button -->
+
+        <div class="hero-header" id="hero-header-index">
+            <div id="hero-content">                
+                <img src="./resources/logo/logoPlataAzuCompleto.png" id="logoHome" alt="Logo">
+
+                <p id="hero-text"> El corazón del deporte </p>
+            
+                <a href="./nosotros.html" target="_blank"><button id="hero-button"> Únete a nuestro equipo </button></a>
+            </div>
+        </div>
+
+        <section class="videoHome">
+            <a href="./reservas.html">
+                <video id="bg-video" autoplay loop muted>
+                    <source src="./resources/home/vid/videoAlberca_2.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </a>
+        </section>
+
+        <!-- JavaScript/jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
