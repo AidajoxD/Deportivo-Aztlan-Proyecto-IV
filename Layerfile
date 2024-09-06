@@ -1,28 +1,24 @@
-version: 0
-steps:
-  - name: Preparar entorno
-    run: |
-      apt-get update
-      apt-get install -y nginx
+#Use an Ubuntu 18.04 base for our staging server
+FROM vm/ubuntu:18.04
 
-  - name: Configurar servidor web
-    run: |
-      rm /etc/nginx/sites-enabled/default
-      echo '
-      server {
-        listen 80;
-        server_name localhost;
+# To note: Layerfiles create entire VMs, *not* containers!
 
-        location / {
-          root /app;
-          index index.html;
-        }
-      }' > /etc/nginx/sites-enabled/default
+# Install python
+RUN apt-get update && apt-get install python3
 
-  - name: Copiar archivos del proyecto
-    run: |
-      cp -r ./* /app
+# Create some files
+RUN echo '<b>some html</b>' > hello.html
+RUN echo '<b>another file</b>' > another.html
 
-  - name: Iniciar servidor web
-    run: |
-      service nginx start
+# You could also install & start a database:
+# RUN apt-get update && apt-get install postgresql
+
+# This line copies the repository to /root in the runner
+COPY . .
+RUN ls
+
+# Expose the webserver in the staging server as a secure link.
+# Whenever someone clicks the link, we'll load this staging server and forward
+# their requests to it.
+RUN BACKGROUND python3 -m http.server 80
+EXPOSE WEBSITE http://localhost:80
