@@ -1,1 +1,28 @@
-Hola Mundo
+version: 0
+steps:
+  - name: Preparar entorno
+    run: |
+      apt-get update
+      apt-get install -y nginx
+
+  - name: Configurar servidor web
+    run: |
+      rm /etc/nginx/sites-enabled/default
+      echo '
+      server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+          root /app;
+          index index.html;
+        }
+      }' > /etc/nginx/sites-enabled/default
+
+  - name: Copiar archivos del proyecto
+    run: |
+      cp -r ./* /app
+
+  - name: Iniciar servidor web
+    run: |
+      service nginx start
